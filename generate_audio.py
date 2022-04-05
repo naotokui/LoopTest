@@ -46,7 +46,7 @@ def generate(args, g_ema, device, mean_latent):
     vocoder.eval()
 
     vocoder_param_fp = os.path.join('./melgan', 'best_netG.pt')
-    vocoder.load_state_dict(torch.load(vocoder_param_fp))
+    vocoder.load_state_dict(torch.load(vocoder_param_fp, map_location=torch.device('cpu')), strict=False)
 
 
     with torch.no_grad():
@@ -145,7 +145,7 @@ def style_mixing(args, generator, step, mean_style, n_source, n_target, device, 
     )
     return images
 if __name__ == "__main__":
-    device = "cuda"
+    device = "cpu"
 
     parser = argparse.ArgumentParser(description="Generate samples from the generator")
 
@@ -201,9 +201,12 @@ if __name__ == "__main__":
     g_ema = Generator(
         args.size, args.latent, args.n_mlp, channel_multiplier=args.channel_multiplier
     ).to(device)
-    checkpoint = torch.load(args.ckpt)
 
-    g_ema.load_state_dict(checkpoint["g_ema"])
+    print(g_ema)
+    checkpoint = torch.load(args.ckpt, map_location=torch.device('cpu'))
+    print(checkpoint["g_ema"].keys())
+
+    g_ema.load_state_dict(checkpoint["g_ema"],strict=False)
 
     if args.truncation < 1:
         with torch.no_grad():

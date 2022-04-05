@@ -8,6 +8,10 @@ from torch import nn
 from torch.nn import functional as F
 from torch.autograd import Function
 
+#from torch.nn import LeakyReLU
+#from torch.nn.functional import leaky_relu
+
+
 from op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
 
 
@@ -152,6 +156,7 @@ class EqualLinear(nn.Module):
         if self.activation:
             out = F.linear(input, self.weight * self.scale)
             out = fused_leaky_relu(out, self.bias * self.lr_mul)
+#            out = fused_leaky_relu(out) #, self.bias * self.lr_mul)
 
         else:
             out = F.linear(
@@ -319,6 +324,7 @@ class StyledConv(nn.Module):
         # self.bias = nn.Parameter(torch.zeros(1, out_channel, 1, 1))
         # self.activate = ScaledLeakyReLU(0.2)
         self.activate = FusedLeakyReLU(out_channel)
+        #self.activate = LeakyReLU(out_channel)
 
     def forward(self, input, style, noise=None):
         out = self.conv(input, style)
