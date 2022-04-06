@@ -4,3 +4,4 @@ tqdm
 ninja
 librosa
 pyyaml
+python-osc
