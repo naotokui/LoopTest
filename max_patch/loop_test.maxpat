@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-67",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 848.076951384544373, 349.038473188877106, 413.46155059337616, 35.0 ],
+					"text" : "/tmp/gem_1565_0.wav /tmp/gem_1565_1.wav /tmp/gem_1565_2.wav /tmp/gem_1565_3.wav /tmp/img_181.png"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-65",
 					"local" : 1,
 					"maxclass" : "ezdac~",
@@ -92,8 +105,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 807.5425626039505, 428.269233047962189, 330.653850615024567, 86.076919674873352 ],
-					"pic" : "/tmp/img_5323.png"
+					"patching_rect" : [ 971.004106521606445, 438.038456499576569, 333.538466095924377, 347.615389943122864 ],
+					"pic" : "/tmp/img_181.png"
 				}
 
 			}
@@ -102,10 +115,10 @@
 					"id" : "obj-52",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 712.773334145545959, 346.076922178268433, 66.0, 22.0 ],
-					"text" : "unpack s s"
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 712.773334145545959, 346.076922178268433, 94.0, 22.0 ],
+					"text" : "unpack s s s s s"
 				}
 
 			}
@@ -399,6 +412,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
+					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -906,6 +920,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-52", 0 ],
+					"order" : 1,
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-67", 1 ],
+					"order" : 0,
 					"source" : [ "obj-23", 0 ]
 				}
 
@@ -1073,7 +1096,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
-					"source" : [ "obj-52", 1 ]
+					"source" : [ "obj-52", 4 ]
 				}
 
 			}
@@ -1162,7 +1185,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "img_4770.png",
+				"name" : "img_181.png",
 				"bootpath" : "/private/tmp",
 				"patcherrelativepath" : "../../../../../../private/tmp",
 				"type" : "PNG",
