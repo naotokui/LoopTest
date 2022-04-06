@@ -21,3 +21,4 @@ freesound_checkpoint/
 freesound_sample_dir/
 evaluation/IS/compute_is_score_one.sh
 .DS_Store
+*.pyc
