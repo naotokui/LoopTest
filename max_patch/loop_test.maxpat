@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 61.0, 130.0, 1953.0, 1024.0 ],
+		"rect" : [ 61.0, 176.0, 1953.0, 901.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -143,7 +143,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1235.880540251731873, 384.615397453308105, 413.46155059337616, 35.0 ],
-					"text" : "/tmp/gem_3311_0.wav /tmp/gem_3311_1.wav /tmp/gem_3311_2.wav /tmp/gem_3311_3.wav /tmp/img_5513.png"
+					"text" : "/tmp/gem_9050_0.wav /tmp/gem_9050_1.wav /tmp/gem_9050_2.wav /tmp/gem_9050_3.wav /tmp/img_2560.png"
 				}
 
 			}
@@ -202,7 +202,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
 					"patching_rect" : [ 1546.307701647281647, 465.923072814941406, 333.538466095924377, 347.615389943122864 ],
-					"pic" : "/tmp/img_5513.png"
+					"pic" : "/tmp/img_2560.png"
 				}
 
 			}
@@ -508,7 +508,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
